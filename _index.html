@@ -1,0 +1,13 @@
+<form method="post" action="upload.php" enctype="multipart/form-data">
+  <label for="upload">Fichier audio (max. 20 Mo)</label><br/>
+  <input type="hidden" name="MAX_FILE_SIZE" value="25000000" />
+  <input type="file" name="upload" id="upload"><br/>
+  <input type="submit" value="Upload">
+  <p>
+   Quel effet appliquer ?
+   <select name="effect">
+    <option value="">Effets :</option>
+    <option value="2x">vitesse * 2</option>
+   </select>
+  </p>
+</form>
