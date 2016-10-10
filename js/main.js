@@ -57,10 +57,10 @@ function toggleRecording( e ) {
         // stop recording
         audioRecorder.stop();
         e.classList.remove("recording");
-        //alert("effect");
-        //var e = document.getElementById("effectSelector");
-        //var effect = e.options[e.selectedIndex].value;
-        //alert(effect);
+        //alert(document.getElementById("effect").value);
+        var e = document.getElementById("effect");
+        var effect = e.options[e.selectedIndex].value;
+        alert(effect);
         audioRecorder.getBuffers(gotBuffers);
     } else {
         // start recording

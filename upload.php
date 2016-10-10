@@ -1,5 +1,5 @@
 <?php
-$uploaddir = '/var/www/html/proj/ul/';
+$uploaddir = '/var/www/html/son/ul/';
 $uploadfile = str_replace(' ', '_', $uploaddir.basename($_FILES['upload']['name']));
 session_start();
 
