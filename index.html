@@ -1,9 +1,8 @@
-
 <!doctype html>
 <html>
   <head>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Audio Recorder</title>
+    <title>Instrugram</title>
 
     <script src="js/audiodisplay.js"></script>
     <script src="js/recorder.js"></script>
@@ -41,6 +40,7 @@ body {
         background: -moz-radial-gradient(center, ellipse cover, #ff0000 0%,lightgrey 75%,lightgrey 100%,#7db9e8 100%); 
         background: radial-gradient(center, ellipse cover, #ff0000 0%,lightgrey 75%,lightgrey 100%,#7db9e8 100%); 
       }
+      #upload { height: 15vh; }
       #save, #save img { height: 10vh; }
       #save { opacity: 0.25;}
       #save[download] { opacity: 1;}
@@ -74,7 +74,8 @@ body {
     </div>
     <div id="controls">
       <img id="record" src="img/mic128.png" onclick="toggleRecording(this);">
-      <a id="save" href="#"><img src="img/save.svg"></a>
+      <img id=upload" src="img/mic128.png" onclick="uploadBlob(this);">
+      <!--<a id="save" href="#"><img src="img/save.svg"></a>--!>
     </div>
   </body>
 </html>

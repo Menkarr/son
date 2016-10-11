@@ -27,8 +27,7 @@ var recIndex = 0;
 
 /* TODO:
 
-- offer mono option
-- "Monitor input" switch
+   add fucking ajax
 */
 
 function saveAudio() {
@@ -60,7 +59,6 @@ function toggleRecording( e ) {
         //alert(document.getElementById("effect").value);
         var e = document.getElementById("effect");
         var effect = e.options[e.selectedIndex].value;
-        alert(effect);
         audioRecorder.getBuffers(gotBuffers);
     } else {
         // start recording
@@ -71,6 +69,26 @@ function toggleRecording( e ) {
         audioRecorder.record();
     }
 }
+
+/*function uploadBlob(blob){
+  alert(blob);
+  var reader = new FileReader();
+  reader.onload = function(event){
+    var fd = new FormData();
+    fd.append('fname', 'test.txt');
+    fd.append('data', event.target.result);
+    $.ajax({
+      type: 'POST',
+      url : 'upblob.php',
+      data: fd,
+      processData: false,
+      contentType: false
+    }).done(function(data) {
+      alert(data);
+    });
+  };
+  reader.readAsDataURL(blob);
+}*/
 
 function convertToMono( input ) {
     var splitter = audioContext.createChannelSplitter(2);
@@ -187,4 +205,7 @@ function initAudio() {
         });
 }
 
+/*document.getElementById("upload").addEventListener("click", function() {
+    alert(blob);
+  }, false);*/
 window.addEventListener('load', initAudio );
