@@ -32,6 +32,7 @@ var recIndex = 0;
 
 function saveAudio() {
     audioRecorder.exportWAV( doneEncoding );
+
     // could get mono instead by saying
     // audioRecorder.exportMonoWAV( doneEncoding );
 }
@@ -70,19 +71,25 @@ function toggleRecording( e ) {
     }
 }
 
-/*function uploadBlob(blob){
+/*function uploadBlob(){
   alert(blob);
   var reader = new FileReader();
   reader.onload = function(event){
     var fd = new FormData();
-    fd.append('fname', 'test.txt');
+    fd.append('fname', blob);
     fd.append('data', event.target.result);
     $.ajax({
       type: 'POST',
       url : 'upblob.php',
       data: fd,
       processData: false,
-      contentType: false
+      contentType: false,
+      success: function(data) {
+        alert("ok");
+      },
+      error: function() {
+        alert("nok");
+      }
     }).done(function(data) {
       alert(data);
     });

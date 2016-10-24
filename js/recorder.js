@@ -108,9 +108,31 @@
 
   Recorder.setupDownload = function(blob, filename){
     var url = (window.URL || window.webkitURL).createObjectURL(blob);
-    var link = document.getElementById("save");
-    link.href = url;
-    link.download = filename || 'output.wav';
+    /*var link = document.getElementById("save");
+      link.href = url;
+      link.download = filename || 'output.wav';
+    audioRecorder.exportWAV(function(blob) {
+      var url = (window.URL || window.webkitURL).createObjectURL(blob);*/
+    alert(url);
+
+    /*var filename = <?php echo $filename;?>;
+    var data = new FormData();
+    data.append('file', blob);
+
+    $.ajax({
+      url :  "../upblob.php",
+      type: 'POST',
+      data: data,
+      contentType: false,
+      processData: false,
+      success: function(data) {
+        alert("boa!");
+      },
+      error: function() {
+        alert("not so boa!");
+      }
+    });
+    });*/
   }
 
   window.Recorder = Recorder;

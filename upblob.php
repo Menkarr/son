@@ -1,5 +1,5 @@
 <?
-// pull the raw binary data from the POST array
+/*// pull the raw binary data from the POST array
 $data = substr($_POST['data'], strpos($_POST['data'], ",") + 1);
 // decode it
 $decodedData = base64_decode($data);
@@ -9,5 +9,12 @@ echo $filename;
 // write the data out to the file
 $fp = fopen($filename, 'wb');
 fwrite($fp, $decodedData);
-fclose($fp);
+fclose($fp);*/
+
+if(isset($_FILES['file']) and !$_FILES['file']['error']){
+  $fname = "11" . ".wav";
+
+  move_uploaded_file($_FILES['file']['tmp_name'], $fname);
+  echo 'ok';
+}
 ?>
